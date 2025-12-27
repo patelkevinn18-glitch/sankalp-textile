@@ -37,8 +37,8 @@ export function QualityPage() {
 
           <div className="grid3">
             <Reveal className="card">
-              <h3 className="cardTitle">Weave stability</h3>
-              <p className="muted">Open weave uniformity and consistent structure.</p>
+              <h3 className="cardTitle">Weave/Absorbency</h3>
+              <p className="muted">Proper in house chemical process for achieving high absorbency and finishing.</p>
             </Reveal>
             <Reveal className="card">
               <h3 className="cardTitle">Dimensions & roll build</h3>

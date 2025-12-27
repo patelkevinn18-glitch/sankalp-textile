@@ -94,25 +94,24 @@ export function ProductsPage() {
 
           <div className="grid2">
             <Reveal className="card">
-              <h3 className="cardTitle">Industrial & technical</h3>
-              <p className="muted">Use where airflow and stable structure matter.</p>
-              <div className="divider" />
+              <h3 className="cardTitle">Orthopedics</h3>
+              <p className="muted">Used in orthopedic applications as POP bandage.</p>
+              {/* <div className="divider" />
               <div className="chips">
                 <span className="chip">Packaging layers</span>
                 <span className="chip">Protective wraps</span>
                 <span className="chip">Liners</span>
-              </div>
+              </div> */}
             </Reveal>
 
             <Reveal className="card">
-              <h3 className="cardTitle">Textile & general</h3>
-              <p className="muted">Adaptable for different finishing and handling requirements.</p>
-              <div className="divider" />
-              <div className="chips">
+              <h3 className="cardTitle">Surgicals</h3>
+              <p className="muted">Adaptable for wound care and surgical applications.</p>
+              {/* <div className="chips">
                 <span className="chip">Interlinings</span>
                 <span className="chip">Support layers</span>
                 <span className="chip">Custom uses</span>
-              </div>
+              </div> */}
             </Reveal>
           </div>
         </div>
