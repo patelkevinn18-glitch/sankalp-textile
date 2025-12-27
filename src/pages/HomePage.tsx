@@ -207,9 +207,9 @@ export function HomePage() {
                   <path d="M10 9H9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="cardTitle">Specification clarity</h3>
+              <h3 className="cardTitle">Quality Control</h3>
               <p className="muted">
-                Simple, repeatable specs so you can reorder confidently with the same output every time.
+                High quality yarn and strict weaving at every stage of production to ensure perfection.
               </p>
             </Reveal>
             <Reveal className="card">
