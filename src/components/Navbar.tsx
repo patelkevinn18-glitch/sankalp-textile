@@ -49,7 +49,7 @@ export function Navbar() {
       <header className="siteHeader">
         <div className="container headerInner">
           <Link to="/" className="brand" aria-label="Go to homepage">
-            <img src="/public/images/logo.svg" alt="Company Logo" className="brandMark" />
+            <img src="images/logo.svg" alt="Company Logo" className="brandMark" />
           </Link>
 
           <nav className="navDesktop" aria-label="Primary navigation">

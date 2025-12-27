@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container footerGrid">
         <div className="footerBrand">
           <Link to="/" className="brand footerBrandLink" aria-label="Go to homepage">
-            <img src="/public/images/logo.svg" alt="Company Logo" className="brandMark" />
+            <img src="images/logo.svg" alt="Company Logo" className="brandMark" />
           </Link>
           <p className="muted">
           We are serving society with a deep commitment to care and quality. Every meter we manufacture reflects our responsibility toward healthcare, where consistency, trust, and uncompromising standards guide everything we do.
