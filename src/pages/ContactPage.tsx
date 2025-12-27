@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, type ChangeEvent, type FormEvent } from "react";
+import { useCallback, useState, type ChangeEvent, type FormEvent } from "react";
 import { Reveal } from "../components/Reveal";
 
 type ContactFormState = {
@@ -19,12 +19,14 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
+// Vercel API endpoint for sending emails
+const API_ENDPOINT = "/api/send-email";
+
 export function ContactPage() {
   const [form_state, setFormState] = useState<ContactFormState>(DEFAULT_STATE);
   const [is_submitted, setIsSubmitted] = useState(false);
   const [error_message, setErrorMessage] = useState<string | null>(null);
-
-  const mail_to = useMemo(() => "contact@sankalptextile.com", []);
+  const [is_loading, setIsLoading] = useState(false);
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,10 +34,11 @@ export function ContactPage() {
   }, []);
 
   const handleSubmit = useCallback(
-    (e: FormEvent) => {
+    async (e: FormEvent) => {
       e.preventDefault();
       setErrorMessage(null);
       setIsSubmitted(false);
+      setIsLoading(true);
 
       const full_name = form_state.full_name.trim();
       const email = form_state.email.trim();
@@ -43,45 +46,56 @@ export function ContactPage() {
 
       if (!full_name) {
         setErrorMessage("Please enter your name.");
+        setIsLoading(false);
         return;
       }
       if (!email || !isValidEmail(email)) {
         setErrorMessage("Please enter a valid email address.");
+        setIsLoading(false);
         return;
       }
       if (!message) {
         setErrorMessage("Please enter your message.");
+        setIsLoading(false);
         return;
       }
 
-      const subject = encodeURIComponent("Inquiry — Sankalp Textile (Leno Gauze)");
-      const body = encodeURIComponent(
-        [
-          `Name: ${full_name}`,
-          `Email: ${email}`,
-          `Company: ${form_state.company_name.trim() || "-"}`,
-          "",
-          "Message:",
-          message,
-        ].join("\n")
-      );
+      try {
+        // Send email via Vercel API endpoint
+        const response = await fetch(API_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            full_name,
+            email,
+            company_name: form_state.company_name.trim() || "",
+            message,
+          }),
+        });
 
-      const mailto_link = `mailto:${mail_to}?subject=${subject}&body=${body}`;
-      
-      // Create a temporary anchor element to trigger mailto (more reliable)
-      const link = document.createElement("a");
-      link.href = mailto_link;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+        const data = await response.json();
 
-      // Reset form state and show success message
-      setFormState(DEFAULT_STATE);
-      setIsSubmitted(true);
+        if (!response.ok) {
+          throw new Error(data.error || "Failed to send email");
+        }
+
+        // Reset form state and show success message
+        setFormState(DEFAULT_STATE);
+        setIsSubmitted(true);
+      } catch (error) {
+        console.error("Error sending email:", error);
+        setErrorMessage(
+          error instanceof Error
+            ? error.message
+            : "Failed to send email. Please try again later or contact us directly."
+        );
+      } finally {
+        setIsLoading(false);
+      }
     },
-    [form_state, mail_to]
+    [form_state]
   );
 
   return (
@@ -121,6 +135,12 @@ export function ContactPage() {
                   <span className="muted">Hours</span>
                   <span>Mon–Sat · 9:00 AM – 6:00 PM</span>
                 </div>
+                <div className="contactRow">
+                  <span className="muted">Address</span>
+                  <a className="link" href="https://maps.app.goo.gl/3VtbFMingJXJovxe9" target="_blank" rel="noopener noreferrer">
+                    44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad, Gujarat, India.
+                  </a>
+                </div>
               </div>
               <div className="divider" />
               <div className="muted small">
@@ -131,11 +151,11 @@ export function ContactPage() {
             <Reveal className="card">
               <h2 className="cardTitle">Send a message</h2>
               <p className="muted small">
-                This is a static site — on submit we’ll open your email client with a prefilled message.
+                Fill out the form below and we'll get back to you as soon as possible.
               </p>
 
               {error_message ? <div className="alert">{error_message}</div> : null}
-              {is_submitted ? <div className="success">Email draft opened. If it didn’t, copy and send manually.</div> : null}
+              {is_submitted ? <div className="success">Thank you! Your message has been sent successfully. We'll get back to you soon.</div> : null}
 
               <form className="form" onSubmit={handleSubmit}>
                 <label className="field">
@@ -187,8 +207,12 @@ export function ContactPage() {
                   />
                 </label>
 
-                <button type="submit" className="btn btnPrimary btnFull">
-                  Send Email
+                <button 
+                  type="submit" 
+                  className="btn btnPrimary btnFull"
+                  disabled={is_loading}
+                >
+                  {is_loading ? "Sending..." : "Send Email"}
                 </button>
               </form>
             </Reveal>

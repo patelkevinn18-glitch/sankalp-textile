@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: true,
     allowedHosts: [
-      'crown-volleyball-determined-courts.trycloudflare.com'
+      'printers-controversy-intent-stores.trycloudflare.com'
     ],
   },
 })

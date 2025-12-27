@@ -29,7 +29,18 @@ export function ProductsPage() {
       <section className="section">
         <div className="container">
           <div className="grid2">
-            <Reveal className="imageCard imageCardTall">
+          <Reveal className="imageCard">
+              <ResponsiveImage
+                src={siteImages.inspection.src}
+                alt={siteImages.inspection.alt}
+                className="image"
+                width={2400}
+                height={1600}
+                sizes="(max-width: 720px) 100vw, 50vw"
+              />
+              <div className="imageCaption">Breathable open weave</div>
+            </Reveal>
+            <Reveal className="imageCard">
               <ResponsiveImage
                 src={siteImages.rolls.src}
                 alt={siteImages.rolls.alt}
@@ -39,17 +50,6 @@ export function ProductsPage() {
                 sizes="(max-width: 720px) 100vw, 50vw"
               />
               <div className="imageCaption">Production-ready rolls</div>
-            </Reveal>
-            <Reveal className="imageCard imageCardTall">
-              <ResponsiveImage
-                src={siteImages.hero.src}
-                alt={siteImages.hero.alt}
-                className="image"
-                width={2400}
-                height={1600}
-                sizes="(max-width: 720px) 100vw, 50vw"
-              />
-              <div className="imageCaption">Breathable open weave (reference)</div>
             </Reveal>
           </div>
         </div>
@@ -115,42 +115,6 @@ export function ProductsPage() {
               </div>
             </Reveal>
           </div>
-
-          <div className="imageGrid imageGridCompact">
-            <Reveal className="imageCard">
-              <ResponsiveImage
-                src={siteImages.loom.src}
-                alt={siteImages.loom.alt}
-                className="image"
-                width={2400}
-                height={1600}
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="imageCaption">Weaving / manufacturing</div>
-            </Reveal>
-            <Reveal className="imageCard">
-              <ResponsiveImage
-                src={siteImages.inspection.src}
-                alt={siteImages.inspection.alt}
-                className="image"
-                width={2400}
-                height={1600}
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="imageCaption">Inspection</div>
-            </Reveal>
-            <Reveal className="imageCard">
-              <ResponsiveImage
-                src={siteImages.rolls.src}
-                alt={siteImages.rolls.alt}
-                className="image"
-                width={2400}
-                height={1600}
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="imageCaption">Bulk packaging</div>
-            </Reveal>
-          </div>
         </div>
       </section>
 
@@ -174,18 +138,6 @@ export function ProductsPage() {
               </div>
               <div className="specRow">
                 <span className="muted">Roll length</span>
-                <span>As required</span>
-              </div>
-            </Reveal>
-
-            <Reveal className="specCard">
-              <div className="specCardTitle">Construction</div>
-              <div className="specRow">
-                <span className="muted">GSM</span>
-                <span>As required</span>
-              </div>
-              <div className="specRow">
-                <span className="muted">Weave openness</span>
                 <span>As required</span>
               </div>
             </Reveal>

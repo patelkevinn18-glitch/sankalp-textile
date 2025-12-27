@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { BrandMark } from "./BrandMark";
-
 type NavItem = {
   to: string;
   label: string;
@@ -51,11 +49,7 @@ export function Navbar() {
       <header className="siteHeader">
         <div className="container headerInner">
           <Link to="/" className="brand" aria-label="Go to homepage">
-            <BrandMark className="brandMark" />
-            <div className="brandText">
-              <span className="brandName">Sankalp Textile</span>
-              <span className="brandTag">Premium Quality Leno Gauze</span>
-            </div>
+            <img src="/public/images/logo.svg" alt="Company Logo" className="brandMark" />
           </Link>
 
           <nav className="navDesktop" aria-label="Primary navigation">

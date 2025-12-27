@@ -141,19 +141,17 @@ img {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
   min-width: 0;
 }
 
 .brandMark {
-  width: 40px;
-  height: 40px;
+  margin-top: 2px;
+  height: 42px;
   flex: none;
 }
 
 .brandText {
   display: flex;
-  flex-direction: column;
   min-width: 0;
   color: #ffffff;
 }
@@ -165,11 +163,13 @@ img {
 }
 
 .brandTag {
-  color: var(--skyblue);
-  font-size: 12px;
+  color: #ffffff;
+  margin-top: 2px;
+  padding-bottom: 4px;
+  margin-left: 40px;
+  font-size: 9px;
   line-height: 1.15;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   opacity: 0.9;
 }
@@ -408,6 +408,13 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+  .heroActions {
+    justify-content: center;
+  }
 }
 
 .heroMeta {
@@ -612,7 +619,7 @@ img {
 .quoteButton{
   font-weight: bold;
   margin-top: 10px;
-  padding: 10px 14px;
+  padding: 14px;
   border-radius: 14px;
   color: #ffffff;
   background: linear-gradient(90deg, var(--navy), var(--skyblue));
@@ -624,13 +631,14 @@ img {
 }
 
 .section {
-  padding: 44px 0;
+  padding: 22px 0;
 }
 
 .sectionAlt {
   background: linear-gradient(180deg, var(--skyblue-light), rgba(255, 255, 255, 0.4));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  margin-top: 22px;
 }
 
 .sectionHead {
@@ -677,8 +685,9 @@ img {
 }
 
 .cardIcon {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
   display: grid;
   place-items: center;
   border-radius: 16px;
@@ -719,7 +728,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 11px 14px;
+  padding: 14px 14px;
   border-radius: 14px;
   /* border: 1px solid transparent; */
   font-weight: 800;
@@ -747,7 +756,8 @@ img {
 }
 
 .btnGhost {
-  border: none;
+  border: 1px solid;
+  border-color: #ffffff;
   background: rgba(255, 255, 255, 0.75);
   color: var(--ink);
 }
@@ -755,12 +765,13 @@ img {
 .btnGhost:hover {
   border-color: var(--skyblue);
   background: var(--skyblue-light);
-  color: var(--navy);
+  color: var(--skyblue);
   transform: translateY(-1px);
 }
 
 .btnFull {
   width: 100%;
+  font-size: 14px;
 }
 
 .split {
@@ -888,6 +899,7 @@ img {
 }
 
 .ctaActions {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -996,13 +1008,13 @@ img {
 }
 
 .link {
-  color: var(--skyblue);
+  color: var(--navy);
   font-weight: 750;
   transition: color 160ms ease;
 }
 
 .link:hover {
-  color: var(--navy);
+  color: var(--skyblue);
   text-decoration: underline;
   text-decoration-color: var(--skyblue);
 }
@@ -1208,7 +1220,7 @@ img {
     padding: 22px;
   }
   .specGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .imageGrid {
     grid-template-columns: repeat(3, 1fr);
@@ -1221,11 +1233,92 @@ img {
     height: 280px;
   }
   .image {
-    height: 240px;
+    height: 460px;
   }
   .footerGrid {
     grid-template-columns: 1.4fr 0.7fr 0.8fr 0.9fr;
     align-items: start;
     gap: 18px;
+  }
+}
+
+.statsSection {
+  background: var(--navy);
+  color: var(--skyblue);
+}
+
+.statsGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.statCard {
+  padding: 24px 18px;
+  border-radius: var(--radius);
+  border: none;
+  background: transparent;
+  text-align: center;
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 250ms ease;
+}
+
+.statIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.statCard:hover .statIcon {
+  color: var(--skyblue);
+  transform: scale(1.1);
+}
+
+.statValue {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1.2;
+  transition: color 250ms ease;
+  display: inline-block;
+}
+
+.statValue span {
+  display: inline-block;
+  transition: transform 0.1s ease-out;
+}
+
+.statLabel {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  transition: color 250ms ease;
+}
+
+.statCard:hover .statValue,
+.statCard:hover .statLabel {
+  color: var(--skyblue);
+}
+
+@media (min-width: 720px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 }

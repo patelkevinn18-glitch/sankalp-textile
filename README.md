@@ -16,7 +16,6 @@ Reference images are stored in `public/images` and used via `src/content/siteIma
 
 To replace with your real photos, keep the same filenames:
 
-- `public/images/hero-leno.jpg`
 - `public/images/loom.jpg`
 - `public/images/fabric-rolls.jpg`
 - `public/images/inspection.jpg`

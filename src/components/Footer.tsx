@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BrandMark } from "./BrandMark";
 
 export function Footer() {
   return (
@@ -7,15 +6,10 @@ export function Footer() {
       <div className="container footerGrid">
         <div className="footerBrand">
           <Link to="/" className="brand footerBrandLink" aria-label="Go to homepage">
-            <BrandMark className="brandMark" />
-            <div className="brandText">
-              <span className="brandName">Sankalp Textile</span>
-              <span className="brandTag">Premium Quality Leno Gauze</span>
-            </div>
+            <img src="/public/images/logo.svg" alt="Company Logo" className="brandMark" />
           </Link>
           <p className="muted">
-            We manufacture breathable, durable leno gauze engineered for consistent quality, reliable lead
-            times, and clear specifications.
+          We are serving society with a deep commitment to care and quality. Every meter we manufacture reflects our responsibility toward healthcare, where consistency, trust, and uncompromising standards guide everything we do.
           </p>
         </div>
 
@@ -54,6 +48,11 @@ export function Footer() {
             +91 9558551023
           </a>
           <div className="muted small">Mon–Sat · 9:00 AM – 6:00 PM</div>
+          <div className="muted small">
+            <a href="https://maps.app.goo.gl/3VtbFMingJXJovxe9" target="_blank" rel="noopener noreferrer">
+              44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad, Gujarat, India.
+            </a>
+          </div>
         </div>
       </div>
 

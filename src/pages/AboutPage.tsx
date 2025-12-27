@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
-import { ResponsiveImage } from "../components/ResponsiveImage";
-import { siteImages } from "../content/siteImages";
 
 export function AboutPage() {
   return (
@@ -32,8 +30,7 @@ export function AboutPage() {
             <Reveal className="card">
               <h2 className="cardTitle">What we manufacture</h2>
               <p className="muted">
-                Leno gauze is an open weave fabric known for airflow, stability, and visibility. Our focus
-                is to supply production-ready rolls with reliable specifications.
+                Leno gauze is an open weave fabric known for airflow, stability, and visibility. leno gauze is used in POP bandages.
               </p>
               <div className="divider" />
               <div className="muted small">
@@ -66,7 +63,7 @@ export function AboutPage() {
             </Reveal>
           </div>
 
-          <div className="imageGrid imageGridCompact">
+          {/* <div className="imageGrid imageGridCompact">
             <Reveal className="imageCard">
               <ResponsiveImage
                 src={siteImages.loom.src}
@@ -100,7 +97,7 @@ export function AboutPage() {
               />
               <div className="imageCaption">Bulk supply</div>
             </Reveal>
-          </div>
+          </div> */}
         </div>
       </section>
 
