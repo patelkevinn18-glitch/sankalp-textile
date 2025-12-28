@@ -1106,6 +1106,19 @@ img {
   gap: 10px;
 }
 
+/* Stack contact links vertically and align icon + text */
+.footerLinks {
+  display: grid;
+  gap: 8px;
+}
+
+.footerLinks .footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
 .footerLinkWithIcon {
   display: inline-flex;
   align-items: center;
@@ -1113,12 +1126,12 @@ img {
 }
 
 .footerIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
   flex-shrink: 0;
   opacity: 0.9;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 .footerLink:hover .footerIcon {
@@ -1131,6 +1144,11 @@ img {
 
 .footerWhatsapp:hover {
   color: #3ae374;
+}
+
+/* Slightly lower logo in footer to avoid feeling "too high" */
+.siteFooter .brandMark {
+  margin-top: 6px;
 }
 
 
@@ -1146,6 +1164,10 @@ img {
   color: var(--skyblue);
   transform: translateX(2px);
   opacity: 1;
+}
+
+.iconFooter{
+  display: inline;
 }
 
 .footerBottom {
