@@ -209,7 +209,7 @@ export function HomePage() {
               </div>
               <h3 className="cardTitle">Quality Control</h3>
               <p className="muted">
-                High quality yarn and strict weaving at every stage of production to ensure perfection.
+                High quality yarn and strict weaving at every stage of production to ensure perfection with Laboratory test.
               </p>
             </Reveal>
             <Reveal className="card">

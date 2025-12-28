@@ -1106,6 +1106,34 @@ img {
   gap: 10px;
 }
 
+.footerLinkWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footerIcon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.footerLink:hover .footerIcon {
+  opacity: 1;
+}
+
+.footerWhatsapp {
+  color: #25d366;
+}
+
+.footerWhatsapp:hover {
+  color: #3ae374;
+}
+
+
 .footerLink {
   color: var(--white);
   font-weight: 650;
