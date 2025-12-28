@@ -57,7 +57,6 @@ export function Footer() {
   </a>
 
   {/* Phone */}
-  <div className="iconFooter">
   <a className="footerLink" href="tel:+919558551023">
     <svg className="footerIcon" viewBox="0 0 24 24">
       <path d="M6.62 10.79a15.05 15.05 
@@ -90,7 +89,6 @@ export function Footer() {
 
      +91 7859953157
   </a>
-  </div>
 </div>
           <div className="muted small">Mon–Sat · 9:00 AM – 6:00 PM</div>
           <div className="muted small">
