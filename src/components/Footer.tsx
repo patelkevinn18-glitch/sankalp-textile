@@ -47,10 +47,13 @@ export function Footer() {
           <a className="footerLink" href="tel:+919558551023">
             +91 9558551023
           </a>
+          <a className="footerLink " href="tel:+917859953157">
+            +91 7859953157
+          </a>
           <div className="muted small">Mon–Sat · 9:00 AM – 6:00 PM</div>
           <div className="muted small">
             <a href="https://maps.app.goo.gl/3VtbFMingJXJovxe9" target="_blank" rel="noopener noreferrer">
-              44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad, Gujarat, India.
+              44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad - 382415, Gujarat, India.
             </a>
           </div>
         </div>

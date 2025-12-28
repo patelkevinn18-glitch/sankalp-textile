@@ -63,11 +63,11 @@ export function HomePage() {
                   </div>
                   <div className="specLine">
                     <span className="specKey">Finish</span>
-                    <span className="specVal">As per requirement</span>
+                    <span className="specVal">As per BP standard</span>
                   </div>
                   <div className="specLine">
                     <span className="specKey">Supply</span>
-                    <span className="specVal">Roll / bulk packaging</span>
+                    <span className="specVal">Roll form</span>
                   </div>
                 </div>
                 <Link to="/quality" className="linkArrow">

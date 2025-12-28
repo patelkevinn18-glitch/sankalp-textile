@@ -38,7 +38,7 @@ export function ProductsPage() {
                 height={1600}
                 sizes="(max-width: 720px) 100vw, 50vw"
               />
-              <div className="imageCaption">Breathable open weave</div>
+              <div className="imageCaption">Leno weave</div>
             </Reveal>
             <Reveal className="imageCard">
               <ResponsiveImage
@@ -137,7 +137,7 @@ export function ProductsPage() {
               </div>
               <div className="specRow">
                 <span className="muted">Roll length</span>
-                <span>As required</span>
+                <span>5000 mtr without joint</span>
               </div>
             </Reveal>
 
@@ -145,11 +145,11 @@ export function ProductsPage() {
               <div className="specCardTitle">Finishing</div>
               <div className="specRow">
                 <span className="muted">Finish type</span>
-                <span>As required</span>
+                <span>As per BP standard</span>
               </div>
               <div className="specRow">
                 <span className="muted">Packaging</span>
-                <span>Bulk / roll</span>
+                <span>Roll form</span>
               </div>
             </Reveal>
           </div>

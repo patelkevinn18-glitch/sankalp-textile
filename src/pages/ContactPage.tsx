@@ -136,7 +136,7 @@ export function ContactPage() {
                   <span>Mon–Sat · 9:00 AM – 6:00 PM</span>
                 </div>
                 <div className="contactRow">
-                  <span className="muted">Address</span>
+                  <span className="muted">Office Address</span>
                   <a className="link" href="https://maps.app.goo.gl/3VtbFMingJXJovxe9" target="_blank" rel="noopener noreferrer">
                     44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad, Gujarat, India.
                   </a>
