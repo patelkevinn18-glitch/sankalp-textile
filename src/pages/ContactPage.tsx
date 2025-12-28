@@ -132,6 +132,12 @@ export function ContactPage() {
                   </a>
                 </div>
                 <div className="contactRow">
+                  <span className="muted">Whatsapp</span>
+                  <a className="link" href="https://wa.me/917859953157?text=Hello%20Sankalp%20Textile,%20I%20would%20like%20to%20inquire%20about%20your%20products.">
+                    +91 7859953157
+                  </a>
+                </div>
+                <div className="contactRow">
                   <span className="muted">Hours</span>
                   <span>Mon–Sat · 9:00 AM – 6:00 PM</span>
                 </div>
