@@ -11,7 +11,7 @@ export function HomePage() {
         <div className="container heroInner">
           <Reveal className="heroCopy">
             <h1 className="heroTitle">
-              Premium quality <span className="accent">Leno gauze</span> Manufacturer
+              Premium quality <span className="accent">Leno Gauze</span> Manufacturer
             </h1>
             <p className="heroLead">
             We are serving society with a deep commitment to care and quality. Every meter we manufacture reflects our responsibility toward healthcare, where consistency, trust, and uncompromising standards guide everything we do.
