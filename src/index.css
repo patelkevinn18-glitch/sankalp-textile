@@ -364,18 +364,18 @@ img {
 }
 
 .pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--skyblue-medium);
-  background: var(--skyblue-light);
-  color: var(--navy);
-  font-weight: 750;
-  font-size: 12px;
-  transition: all 160ms ease;
-}
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px 12px;
+   border-radius: 999px;
+   border: 1px solid var(--skyblue-medium);
+   background: var(--skyblue-light);
+   color: var(--navy);
+   font-weight: 750;
+   font-size: 14px;
+   transition: all 160ms ease;
+ }
 
 .pill:hover {
   background: var(--skyblue-medium);
@@ -415,6 +415,14 @@ img {
   .heroActions {
     justify-content: center;
   }
+  .pill {
+     display: flex;
+     width: fit-content;
+     margin: 0 auto;
+     gap: 6px;
+     padding: 8px 12px;
+   }
+ }
 }
 
 .heroMeta {
