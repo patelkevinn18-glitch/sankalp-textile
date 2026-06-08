@@ -10,6 +10,12 @@ export function HomePage() {
       <section className="hero">
         <div className="container heroInner">
           <Reveal className="heroCopy">
+            <span className="pill">
+   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+     <path d="M6.5 0L7.9 4.6L12.5 6L7.9 7.4L6.5 12L5.1 7.4L0.5 6L5.1 4.6L6.5 0Z" fill="currentColor"/>
+   </svg>
+   Global Quality With A Touch Of Care.
+ </span>
             <h1 className="heroTitle">
               Premium quality <span className="accent">Leno Gauze</span> Manufacturer
             </h1>
