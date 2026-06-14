@@ -10,7 +10,7 @@ export function HomePage() {
     <>
       <section className="hero">
         <div classname="container">
-        <ExhibinationBanner/>
+        <ExhibitionBanner/>
         </div>
         <div className="container heroInner">
           <Reveal className="heroCopy">
