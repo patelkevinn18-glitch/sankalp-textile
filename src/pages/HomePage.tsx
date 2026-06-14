@@ -9,7 +9,7 @@ export function HomePage() {
   return (
     <>
       <section className="hero">
-        <div classname="container">
+        <div className="container">
         <ExhibitionBanner/>
         </div>
         <div className="container heroInner">
