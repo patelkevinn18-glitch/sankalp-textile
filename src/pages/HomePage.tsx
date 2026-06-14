@@ -3,11 +3,15 @@ import { Reveal } from "../components/Reveal";
 import { ResponsiveImage } from "../components/ResponsiveImage";
 import { CountUp } from "../components/CountUp";
 import { siteImages } from "../content/siteImages";
+import { ExhibitionBanner } from "../components/ExhibitionBanner";
 
 export function HomePage() {
   return (
     <>
       <section className="hero">
+        <div classname="container">
+        <ExhibinationBanner/>
+        </div>
         <div className="container heroInner">
           <Reveal className="heroCopy">
             <span className="pill">
