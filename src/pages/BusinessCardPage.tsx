@@ -40,9 +40,9 @@ We prioritize a repeatable workflow: confirm specs, manufacture with staged chec
 Every meter we manufacture reflects our responsibility toward healthcare, where consistency, trust, and uncompromising standards guide everything we do.`;
 
 const SLIDER_IMAGES = [
-  "/images/home.jpg",
-  "/images/fabric-rolls.jpg",
   "/images/inspection.jpg",
+  "/images/home.jpg",
+  "/images/fabric-rolls.jpg"
 ];
 
 /* ───────────────────────────── ICONS ───────────────────────────── */
