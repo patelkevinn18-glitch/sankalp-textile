@@ -5,9 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   server: {
-    host: true,
-    allowedHosts: [
-      'printers-controversy-intent-stores.trycloudflare.com'
-    ],
+    host: '0.0.0.0',
+    port: 5173,
   },
 })
