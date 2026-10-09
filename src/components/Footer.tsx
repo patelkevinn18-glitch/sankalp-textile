@@ -89,11 +89,13 @@ export function Footer() {
   </a>
 </div>
           <div className="muted small">Mon–Sat · 9:00 AM – 6:00 PM</div>
+          {/* Address hidden for now
           <div className="muted small">
             <a href="https://maps.app.goo.gl/3VtbFMingJXJovxe9" target="_blank" rel="noopener noreferrer">
               44, Girivar Glean, B/h Megma restaurant, S.P. ring road, Odhav, Ahmedabad - 382415, Gujarat, India.
             </a>
           </div>
+          */}
         </div>
       </div>
 
@@ -105,5 +107,3 @@ export function Footer() {
     </footer>
   );
 }
-
-

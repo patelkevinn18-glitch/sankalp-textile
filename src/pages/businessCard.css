@@ -1,0 +1,560 @@
+/* Digital business card (/business-card) — standalone, no navbar/footer */
+
+.bcPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #e8f3fb 0%, #ffffff 50%, #e8f3fb 100%);
+}
+
+.bcCard {
+  width: 100%;
+  max-width: 672px;
+  color: var(--white);
+  background: linear-gradient(135deg, #0b3a6e 0%, var(--navy) 100%);
+}
+
+/* Slider */
+.bcSlider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--navy);
+}
+.bcSlider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: bcFade 0.4s ease;
+}
+.bcSliderBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 2, 52, 0.6);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.bcSliderBtn:hover {
+  background: rgba(2, 2, 52, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+.bcSliderBtn.left {
+  left: 12px;
+}
+.bcSliderBtn.right {
+  right: 12px;
+}
+
+/* Action buttons */
+.bcTopRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-top: 12px;
+}
+.bcActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 16px 8px 8px;
+}
+.bcAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 72px;
+  padding: 4px;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 0.2s;
+}
+.bcAction:hover {
+  transform: translateY(-2px);
+}
+.bcActionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.bcAction:hover .bcActionIcon {
+  background: var(--skyblue);
+  color: var(--white);
+  transform: scale(1.1);
+}
+.bcActionLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Profile */
+.bcProfile {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4px 16px 8px;
+  pointer-events: none;
+}
+.bcLogo {
+  display: inline-block;
+  margin-top: -144px;
+  margin-bottom: 12px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--navy);
+  padding: 22px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(62, 159, 214, 0.35);
+}
+.bcProfile h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.bcProfile p {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+/* Section divider */
+.bcDivider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px 4px;
+  margin-top: 8px;
+}
+.bcDivider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.bcDivider h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Products list */
+.bcList {
+  padding: 8px 20px 12px;
+}
+.bcList p {
+  margin: 0;
+  padding: 2px 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.bcList p.bold {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  opacity: 1;
+}
+
+/* Contact */
+.bcContact {
+  padding: 8px 12px 12px;
+}
+.bcContactRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--white);
+  transition: background 0.2s, transform 0.2s;
+  word-break: break-word;
+}
+.bcContactRow:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+.bcContactIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--navy);
+}
+.bcAddress {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+.bcAddress p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.bcAddress .bcAddressLabel {
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--skyblue);
+  opacity: 1;
+}
+.bcPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.bcPill:hover {
+  background: var(--skyblue);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.bcFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.bcFooter img {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+}
+.bcFooter span {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  letter-spacing: 0.02em;
+}
+
+/* Modal */
+.bcOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  animation: bcFade 0.2s ease;
+}
+@media (min-width: 640px) {
+  .bcOverlay {
+    align-items: center;
+  }
+}
+.bcModal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--white);
+  color: #1f2937;
+  border-radius: 16px 16px 0 0;
+  animation: bcUp 0.3s ease;
+}
+@media (min-width: 640px) {
+  .bcModal {
+    border-radius: 16px;
+  }
+}
+.bcModalHead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+.bcModalHead h5 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.bcModalHead button {
+  display: flex;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+}
+.bcModalHead button:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+.bcModalBody {
+  padding: 20px;
+}
+.bcModalText {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+.bcModalText:last-child {
+  margin-bottom: 0;
+}
+.bcCenter {
+  text-align: center;
+}
+.bcQrLogo {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  background: var(--navy);
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.bcModalTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.bcModalSub {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.bcQrBox {
+  display: inline-block;
+  margin: 24px 0;
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+}
+.bcQrBox img {
+  display: block;
+}
+.bcModalHint {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+.bcHoursRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.bcHoursRow:last-child {
+  border-bottom: none;
+}
+.bcHoursRow strong {
+  color: var(--navy);
+}
+.bcHoursRow strong.closed {
+  color: #ef4444;
+}
+.bcShareBtns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.bcShareBtns a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: var(--white);
+  transition: background 0.3s, transform 0.3s;
+}
+.bcShareBtns a:hover {
+  background: var(--skyblue);
+  transform: scale(1.1);
+}
+.bcCopyRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.bcCopyRow input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  background: #f9fafb;
+  color: #4b5563;
+}
+.bcCopyRow button,
+.bcForm button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bcCopyRow button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  background: var(--navy);
+}
+.bcCopyRow button:hover {
+  background: var(--skyblue);
+}
+.bcForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bcForm input,
+.bcForm textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.875rem;
+  color: #1f2937;
+  background: #f9fafb;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.bcForm input:focus,
+.bcForm textarea:focus {
+  border-color: var(--skyblue);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--skyblue-light);
+}
+.bcForm button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0b3a6e, var(--navy));
+  box-shadow: 0 10px 20px rgba(2, 2, 52, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.bcForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2, 2, 52, 0.35);
+}
+
+@keyframes bcFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bcUp {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Profile: tagline / person */
+.bcProfile .bcTagline {
+  font-style: italic;
+  font-weight: 400;
+}
+.bcProfile .bcSubtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--skyblue);
+  opacity: 1;
+}
+.bcDash {
+  display: block;
+  width: 40%;
+  margin: 16px auto;
+  border-top: 1px dashed rgba(255, 255, 255, 0.35);
+}
+.bcProfile h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* logo.svg is a wide white wordmark; crop to the icon on the left */
+.bcLogo img,
+.bcQrLogo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
