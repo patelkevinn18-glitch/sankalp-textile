@@ -252,8 +252,8 @@ export function BusinessCardPage() {
               <img src={COMPANY.logo} alt={`${COMPANY.name} logo`} />
             </span>
             <h1>{COMPANY.name.toUpperCase()}</h1>
-            <p className="bcTagline">{COMPANY.tagline}</p>
             <p className="bcSubtitle">{COMPANY.subtitle}</p>
+            <p className="bcTagline">{COMPANY.tagline}</p>
             <span className="bcDash" />
             <h2>{COMPANY.person}</h2>
             <p>{COMPANY.designation}</p>
