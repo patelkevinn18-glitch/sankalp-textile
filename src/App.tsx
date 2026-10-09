@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { SiteLayout } from "./components/SiteLayout";
 import { AboutPage } from "./pages/AboutPage";
-import { BusinessCardPage } from "./pages/businessCardPage";
+import { BusinessCardPage } from "./pages/BusinessCardPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
